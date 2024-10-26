@@ -1,0 +1,49 @@
+<% if @list.present? %>
+  <h1 class="text-lg font-bold">Add Todo</h1>
+  <%= render 'layouts/flash' %>
+  <%= form_with model: @new_todo do |form| %>
+    <div class="mt-1 mb-1">
+      <%= form.label :description %>
+      <%= form.text_field :description, class: 'shadow
+                                                appearance-none
+                                                border
+                                                rounded
+                                                w-full
+                                                py-2
+                                                px-3
+                                                leading-tight
+                                                focus:outline-none
+                                                focus:shadow-outline' %>
+    </div>
+    <div class="mt-1 mb-1">
+      <%= form.label :due %>
+      <%= form.datetime_local_field :due, class: 'shadow
+                                                  appearance-none
+                                                  border
+                                                  rounded
+                                                  w-full
+                                                  py-2
+                                                  px-3
+                                                  leading-tight
+                                                  focus:outline-none
+                                                  focus:shadow-outline' %>
+    </div>
+    <%= form.hidden_field :list_id, value: @list.id %>
+    <%= form.button 'Add To Do',
+                    class: 'rounded-full
+                            border-2
+                            border-sky-600
+                            px-1
+                            mt-1
+                            mb-4' %>
+  <% end %>
+
+  <%= link_to 'Purge Done Todos',
+      todo_path(id: @list.id),
+      data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' },
+      class: 'rounded-full
+              border-2
+              border-red-500
+              px-1
+              mt-1' %>
+<% end %>

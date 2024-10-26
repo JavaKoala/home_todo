@@ -29,7 +29,7 @@ class ListsController < ApplicationController
     @lists = List.all
     @list = List.find_by(id: params[:list_id])
     @new_list = List.new
-    @todos = @list&.todos || []
+    @todos = @list.present? ? Todo.list_order(@list) : []
     @new_todo = Todo.new
   end
 end

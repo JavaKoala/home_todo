@@ -1,0 +1,16 @@
+<h1 class="text-lg font-bold">Lists</h1>
+<ul class="divide-y">
+  <% @lists.each do |list| %>
+    <li>
+      <%= '[x]' if list.id == @list&.id %>
+      <%= link_to list.name, lists_path(list_id: list.id) %>
+      <%= link_to 'Delete',
+          list_path(id: list.id),
+          data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' },
+          class: 'rounded-full
+                  border-2
+                  border-red-500
+                  px-1' if list.id == @list&.id %>
+    </li>
+  <% end %>
+</ul>

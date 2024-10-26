@@ -1,0 +1,11 @@
+<h1 class="text-lg font-bold">Todos</h1>
+<ul class="divide-y mt-3 mb-3">
+  <% @todos.each do |todo| %>
+    <li>
+      <%= form_with model: todo, method: :patch do |form| %>
+        <%= form.hidden_field :done, value: !todo.done %>
+        <%= form.button "#{'[x]' if todo.done} #{todo.description}", class: 'text-left' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
