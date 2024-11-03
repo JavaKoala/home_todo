@@ -1,4 +1,8 @@
-<h1 class="text-lg font-bold">Todos</h1>
+<% if @list.present? %>
+  <h1 class="text-lg font-bold"><%= @list.name %> Todos</h1>
+<% else %>
+  <h1 class="text-lg font-bold">Todos</h1>
+<% end %>
 <ul class="divide-y mt-3 mb-3">
   <% @todos.each do |todo| %>
     <li>

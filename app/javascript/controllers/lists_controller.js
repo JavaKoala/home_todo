@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    this.element.textContent = "Hello World!"
+  displayLists() {
+    document.getElementById("lists-container").style = "display: block;"
   }
 }

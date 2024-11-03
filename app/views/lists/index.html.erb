@@ -1,19 +1,28 @@
-<div class="box-border
-            border-2 
-            border-sky-500
-            rounded-md
-            m-1
-            p-1">
-  <h1>Hello Todos</h1>
+<div data-controller="lists">
+  <div data-action="click->lists#displayLists"
+       class="columns-2
+              box-border
+              border-2 
+              border-sky-500
+              rounded-md
+              m-1
+              p-1">
+    <h1>Home Todos</h1>
+    <h1 class="text-right">Lists</h1>
+  </div>
 </div>
 
-<div class="columns-2 h-screen m-1">
-  <div class="h-full">
-    <%= render 'lists' %>
-    <%= render 'list_form' %>
-  </div>
+<div class="md:columns-2 h-screen m-1">
+  <% if @list.blank? %>
+    <div id="lists-container" class="md:h-full mb-4" style="display: block;">
+  <% else %>
+    <div id="lists-container" class="md:h-full mb-4" style="display: none;">
+  <% end %>
+      <%= render 'lists' %>
+      <%= render 'list_form' %>
+    </div>
 
-  <div class="h-full">
+  <div class="md:h-full">
     <%= render 'todos' %>
     <%= render 'todo_form' %>
   </div>
