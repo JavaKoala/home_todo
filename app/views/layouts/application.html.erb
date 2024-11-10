@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title><%= content_for(:title) || "Home Todo" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,8 +17,10 @@
   </head>
 
   <body>
-    <main class="container font-mono">
-      <%= yield %>
+    <main class="font-mono bg-gradient-to-b from-zinc-50 to-zinc-200">
+      <div class="container">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
