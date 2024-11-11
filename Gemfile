@@ -53,7 +53,7 @@ group :development, :test do
 
   # Use RSpec for testing
   gem 'rails-controller-testing', '~> 1.0'
-  gem 'rspec-rails', '~> 7.0'
+  gem 'rspec-rails', '~> 7.1'
 end
 
 group :development do
