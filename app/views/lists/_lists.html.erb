@@ -1,12 +1,12 @@
-<h1 class="text-lg font-bold">Lists</h1>
+<h1 class="text-lg font-bold"><%= t :lists %></h1>
 <ul class="divide-y">
   <% @lists.each do |list| %>
-    <li>
+    <li class="pt-1 pb-1">
       <%= '❎' if list.id == @list&.id %>
       <%= link_to list.name, lists_path(list_id: list.id) %>
-      <%= link_to 'Delete',
+      <%= link_to t(:delete),
           list_path(id: list.id),
-          data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' },
+          data: { 'turbo-method': :delete, 'turbo-confirm': t(:are_you_sure) },
           class: 'rounded-full
                   border-2
                   border-red-500

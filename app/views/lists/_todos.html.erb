@@ -1,9 +1,9 @@
 <% if @list.present? %>
-  <h1 class="text-lg font-bold"><%= @list.name %> Todos</h1>
+  <h1 class="text-lg font-bold"><%= @list.name %> <%= t :todos %></h1>
 <% end %>
 <ul class="divide-y mt-3 mb-3">
   <% @todos.each do |todo| %>
-    <li>
+    <li class="pt-1 pb-1">
       <%= form_with model: todo, method: :patch do |form| %>
         <%= form.hidden_field :done, value: !todo.done %>
         <%= form.button "#{'✅' if todo.done} #{todo.description}", class: 'text-left' %>

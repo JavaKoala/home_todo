@@ -1,7 +1,7 @@
-<h1 class="mt-3 text-lg font-bold">New List</h1>
+<h1 class="mt-3 text-lg font-bold"><%= t :new_list %></h1>
 <%= form_with model: @new_list do |form| %>
   <div>
-    <%= form.label :name %>
+    <%= form.label :name, t(:name) %>
     <%= form.text_field :name, class: 'shadow
                                        appearance-none
                                        border
@@ -14,9 +14,9 @@
                                        focus:outline-none
                                        focus:shadow-outline' %>
   </div>
-  <%= form.button 'Submit', class: 'rounded-full
-                                    border-2
-                                    border-sky-600
-                                    px-1
-                                    mt-1' %>
+  <%= form.button t(:submit), class: 'rounded-full
+                                      border-2
+                                      border-sky-600
+                                      px-1
+                                      mt-1' %>
 <% end %>

@@ -28,4 +28,16 @@
 #       enabled: "ON"
 
 en:
+  add_todo: "Add Todo"
+  are_you_sure: "Are you sure?"
+  delete: "Delete"
+  description: "Description"
+  due: "Due"
+  home_todos: "Home Todos"
   invalid_todo: "Can't find Todo"
+  lists: "Lists"
+  name: "Name"
+  new_list: "New List"
+  purge_done_todos: "Purge Done Todos"
+  submit: "Submit"
+  todos: "Todos"
