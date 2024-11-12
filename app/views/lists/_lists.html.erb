@@ -1,5 +1,5 @@
 <h1 class="text-lg font-bold"><%= t :lists %></h1>
-<ul class="divide-y">
+<ul class="divide-y divide-zinc-400">
   <% @lists.each do |list| %>
     <li class="pt-1 pb-1">
       <%= '❎' if list.id == @list&.id %>
