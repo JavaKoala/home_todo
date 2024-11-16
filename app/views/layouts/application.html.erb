@@ -16,8 +16,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="font-mono bg-gradient-to-b from-zinc-200">
+  <body class="bg-gradient-to-b
+               from-zinc-200
+               dark:from-zinc-800
+               dark:bg-black
+               bg-no-repeat">
+    <main class="font-mono dark:text-zinc-50">
       <div class="container">
         <%= yield %>
       </div>
