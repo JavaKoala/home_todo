@@ -14,7 +14,7 @@
                                                 leading-tight
                                                 bg-inherit
                                                 focus:outline-none
-                                                focus:shadow-outline' %>
+                                                focus:border-sky-500' %>
     </div>
     <div class="mt-1 mb-1">
       <%= form.label :due, t(:due) %>
@@ -28,7 +28,7 @@
                                                   leading-tight
                                                   bg-inherit
                                                   focus:outline-none
-                                                  focus:shadow-outline' %>
+                                                  focus:border-sky-500' %>
     </div>
     <%= form.hidden_field :list_id, value: @list.id %>
     <%= form.button t(:add_todo),
