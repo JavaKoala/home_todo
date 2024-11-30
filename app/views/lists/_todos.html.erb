@@ -6,7 +6,7 @@
            mt-3
            mb-3">
   <% @todos.each do |todo| %>
-    <li class="pt-1 pb-1">
+    <li class="pt-1 pb-1 <%= todos_color(todo) %>">
       <%= form_with model: todo, method: :patch do |form| %>
         <%= form.hidden_field :done, value: !todo.done %>
         <%= form.button "#{'✅' if todo.done} #{todo.description}", class: 'text-left' %>
