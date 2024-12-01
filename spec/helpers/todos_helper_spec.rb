@@ -14,31 +14,31 @@ RSpec.describe TodosHelper do
       expect(helper.todos_color(todo)).to be_nil
     end
 
-    it 'returns darker green when the todo is not done within a day' do
+    it 'returns green when the todo is not done within a day' do
       todo = Todo.new(done: false, due: 1.day.ago)
 
       expect(helper.todos_color(todo)).to eq 'bg-green-100 dark:bg-green-900'
     end
 
-    it 'returns green when the todo is not done within two day' do
+    it 'returns green when the todo is not done within two days' do
       todo = Todo.new(done: false, due: 2.days.ago)
 
       expect(helper.todos_color(todo)).to eq 'bg-green-50 dark:bg-green-950'
     end
 
-    it 'returns red when the todo is not done within three day' do
+    it 'returns red when the todo is not done within three days' do
       todo = Todo.new(done: false, due: 3.days.ago)
 
       expect(helper.todos_color(todo)).to eq 'bg-red-50 dark:bg-red-950'
     end
 
-    it 'returns red when the todo is not done within 4 day' do
+    it 'returns red when the todo is not done within 4 days' do
       todo = Todo.new(done: false, due: 4.days.ago)
 
       expect(helper.todos_color(todo)).to eq 'bg-red-100 dark:bg-red-900'
     end
 
-    it 'returns red when the todo is not done within 5 day' do
+    it 'returns red when the todo is not done within 5 days' do
       todo = Todo.new(done: false, due: 5.days.ago)
 
       expect(helper.todos_color(todo)).to eq 'bg-red-200 dark:bg-red-800'
