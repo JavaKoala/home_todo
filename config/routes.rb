@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   # Defines the routes for the lists controller
   resources :lists, only: %i[index create destroy]
   resources :todos, only: %i[create update destroy]
+
+  mount RushJob::Engine => '/rush_job'
 end
