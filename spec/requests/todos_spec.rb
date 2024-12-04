@@ -22,6 +22,35 @@ RSpec.describe 'Todos' do
 
         expect(flash).to be_empty
       end
+
+      it 'does sends event to calendar when send_to_calendar is true' do
+        allow(CreateEventJob).to receive(:perform_later)
+
+        post '/todos',
+             params: { todo: { description: 'My Todo', due: Time.zone.now, list_id: list.id,
+                               send_to_calendar: 'true' } }
+
+        expect(CreateEventJob).to have_received(:perform_later).with(Todo.last.id)
+      end
+
+      it 'does not send to calendar when send_to_calendar is false' do
+        allow(CreateEventJob).to receive(:perform_later)
+
+        post '/todos',
+             params: { todo: { description: 'My Todo', due: Time.zone.now, list_id: list.id,
+                               send_to_calendar: 'false' } }
+
+        expect(CreateEventJob).not_to have_received(:perform_later)
+      end
+
+      it 'does not send to calendar when send_to_calendar is not present' do
+        allow(CreateEventJob).to receive(:perform_later)
+
+        post '/todos',
+             params: { todo: { description: 'My Todo', due: Time.zone.now, list_id: list.id } }
+
+        expect(CreateEventJob).not_to have_received(:perform_later)
+      end
     end
 
     context 'when the create is unsuccessful' do

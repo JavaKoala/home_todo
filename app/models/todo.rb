@@ -1,4 +1,6 @@
 class Todo < ApplicationRecord
+  attr_accessor :send_to_calendar
+
   belongs_to :list
   validates :description, presence: true
   validates :due, presence: true
