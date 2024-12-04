@@ -3,6 +3,7 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
 
     if @todo.save
+      CreateEventJob.perform_later(@todo.id) if todo_params[:send_to_calendar] == '1'
       list_redirect(@todo.list_id)
     else
       list_redirect(@todo.list_id, @todo.errors.full_messages.join(', '))
@@ -29,7 +30,7 @@ class TodosController < ApplicationController
   private
 
   def todo_params
-    params.require(:todo).permit(:description, :due, :done, :list_id)
+    params.require(:todo).permit(:description, :due, :done, :list_id, :send_to_calendar)
   end
 
   def list_redirect(list_id, alert = nil)

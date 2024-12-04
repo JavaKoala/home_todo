@@ -30,6 +30,12 @@
                                                   focus:outline-none
                                                   focus:border-sky-500' %>
     </div>
+    <div class="mt-1 mb-1">
+      <% if Rails.configuration.home_calendar.enabled == true %>
+        <%= form.label :send_to_calendar, t(:send_to_calendar) %>
+        <%= form.checkbox :send_to_calendar %>
+      <% end %>
+    </div>
     <%= form.hidden_field :list_id, value: @list.id %>
     <%= form.button t(:add_todo),
                     class: 'rounded-full

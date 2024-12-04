@@ -39,5 +39,6 @@ en:
   name: "Name"
   new_list: "New List"
   purge_done_todos: "Purge Done Todos"
+  send_to_calendar: "Send to Calendar"
   submit: "Submit"
   todos: "Todos"

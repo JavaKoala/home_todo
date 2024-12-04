@@ -39,5 +39,8 @@ module HomeTodo
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.active_job.queue_adapter = :delayed_job
+
+    # Configuration for send to home calendar feature
+    config.home_calendar = config_for(:home_calendar)
   end
 end
