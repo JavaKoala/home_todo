@@ -1,5 +1,16 @@
 module HomeCalendar
   class HomeCalendarService
+    def self.event_from_todo(todo)
+      event = Event.new
+      event.assign_attributes(
+        title: todo.description,
+        start: todo.due,
+        end: todo.due + 1.hour
+      )
+
+      event
+    end
+
     def self.create_event(event)
       return if event.invalid? || !Rails.application.config.home_calendar[:enabled]
 

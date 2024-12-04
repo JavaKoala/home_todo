@@ -1,7 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe HomeCalendar::HomeCalendarService do
-  describe '#create_event' do
+  describe '.event_from_todo' do
+    it 'sets the title from a todo' do
+      todo = Todo.new(description: 'My Todo', due: Time.zone.now)
+
+      event = described_class.event_from_todo(todo)
+
+      expect(event.title).to eq 'My Todo'
+    end
+
+    it 'sets the start from a todo' do
+      todo = Todo.new(description: 'My Todo', due: Time.zone.now)
+
+      event = described_class.event_from_todo(todo)
+
+      expect(event.start).to eq todo.due
+    end
+
+    it 'sets the end from a todo' do
+      todo = Todo.new(description: 'My Todo', due: Time.zone.now)
+
+      event = described_class.event_from_todo(todo)
+
+      expect(event.end).to eq todo.due + 1.hour
+    end
+  end
+
+  describe '.create_event' do
     before do
       allow(Rails.configuration.home_calendar).to receive(:[]).with(:enabled).and_return(true)
       allow(Rails.configuration.home_calendar).to receive(:[]).with(:url).and_return('http://localhost:3001/api/v1')

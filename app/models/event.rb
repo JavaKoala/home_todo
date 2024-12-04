@@ -1,5 +1,6 @@
 class Event
   include ActiveModel::Attributes
+  include ActiveModel::AttributeAssignment
   include ActiveModel::Validations
   include ActiveModel::Serializers::JSON
 
