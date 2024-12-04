@@ -28,7 +28,7 @@ RSpec.describe 'Todos' do
 
         post '/todos',
              params: { todo: { description: 'My Todo', due: Time.zone.now, list_id: list.id,
-                               send_to_calendar: 'true' } }
+                               send_to_calendar: '1' } }
 
         expect(CreateEventJob).to have_received(:perform_later).with(Todo.last.id)
       end
@@ -38,7 +38,7 @@ RSpec.describe 'Todos' do
 
         post '/todos',
              params: { todo: { description: 'My Todo', due: Time.zone.now, list_id: list.id,
-                               send_to_calendar: 'false' } }
+                               send_to_calendar: '0' } }
 
         expect(CreateEventJob).not_to have_received(:perform_later)
       end
