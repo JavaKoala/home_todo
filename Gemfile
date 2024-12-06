@@ -37,6 +37,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Delayed Job for background processing
+gem 'daemons', '~> 1.4'
 gem 'delayed_job_active_record', '~> 4.1'
 gem 'rush_job', '~> 1.1'
 
