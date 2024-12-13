@@ -89,7 +89,7 @@ docker run -it --rm --name home_todo -p 3000:3000 \
 RAILS_DEVELOPMENT_HOSTS=host.docker.internal bundle exec rails s -p 3001
 ```
 
-4. Run the delayed job daemon in the docker container from the docker desktop
+4. Run the delayed job daemon in the `home_todo` docker container from the docker desktop
 
 ```
 bin/delayed_job start
