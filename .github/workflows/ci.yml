@@ -35,6 +35,9 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Copy home_calendar.yml.sample
+        run: cp config/home_calendar.yml.sample config/home_calendar.yml
+
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
 
