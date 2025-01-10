@@ -62,6 +62,16 @@
       <button type="button" data-action="dialog#close" autofocus>Cancel</button>
     </dialog>
 
-    <button type="button" data-action="dialog#open">Purge done todos</button>
+    <button
+      type="button"
+      data-action="dialog#open"
+      class="rounded-full
+             border-2
+             border-red-500
+             px-1
+             mt-1"
+    >
+      <%= t(:purge_done_todos) %>
+    </button>
   </div>
 <% end %>
