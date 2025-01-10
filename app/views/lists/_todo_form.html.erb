@@ -45,23 +45,23 @@
                             mt-3
                             mb-4' %>
   <% end %>
-
-  <%= link_to t(:purge_done_todos),
-      todo_path(id: @list.id),
-      data: { 'turbo-method': :delete, 'turbo-confirm':  t(:are_you_sure) },
-      class: 'rounded-full
-              border-2
-              border-red-500
-              px-1
-              mt-1' %>
 <% end %>
 
 <div data-controller="dialog">
   <dialog data-dialog-target="dialog">
-    <p>The modal's content here</p>
+    <h2>Are you sure?</h2>
+
+    <%= link_to t(:purge),
+        todo_path(id: @list.id),
+        data: { 'turbo-method': :delete },
+        class: 'rounded-full
+                border-2
+                border-red-500
+                px-1
+                mt-1' %>
 
     <button type="button" data-action="dialog#close" autofocus>Cancel</button>
   </dialog>
 
-  <button type="button" data-action="dialog#open">Open modal</button>
+  <button type="button" data-action="dialog#open">Purge done todos</button>
 </div>
