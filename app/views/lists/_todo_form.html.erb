@@ -46,12 +46,43 @@
                             mb-4' %>
   <% end %>
 
-  <%= link_to t(:purge_done_todos),
-      todo_path(id: @list.id),
-      data: { 'turbo-method': :delete, 'turbo-confirm':  t(:are_you_sure) },
-      class: 'rounded-full
-              border-2
-              border-red-500
-              px-1
-              mt-1' %>
+  <div data-controller="dialog">
+    <dialog
+      data-dialog-target="dialog"
+      class="p-4
+             dark:bg-zinc-950
+             dark:text-zinc-50
+             rounded
+             shadow-xl"
+    >
+      
+      <h2>Are you sure?</h2>
+
+      <hr class="mb-4">
+
+      <%= link_to t(:purge),
+          todo_path(id: @list.id),
+          data: { 'turbo-method': :delete },
+          class: 'rounded-full
+                  border-2
+                  border-red-500
+                  px-1
+                  mt-1
+                  mr-8' %>
+
+      <button type="button" data-action="dialog#close" autofocus>Cancel</button>
+    </dialog>
+
+    <button
+      type="button"
+      data-action="dialog#open"
+      class="rounded-full
+             border-2
+             border-red-500
+             px-1
+             mt-1"
+    >
+      <%= t(:purge_done_todos) %>
+    </button>
+  </div>
 <% end %>
