@@ -4,13 +4,43 @@
     <li class="pt-1 pb-1">
       <%= '❎' if list.id == @list&.id %>
       <%= link_to list.name, lists_path(list_id: list.id) %>
-      <%= link_to t(:delete),
-          list_path(id: list.id),
-          data: { 'turbo-method': :delete, 'turbo-confirm': t(:are_you_sure) },
-          class: 'rounded-full
+      <% if list.id == @list&.id %>
+        <span data-controller="dialog">
+          <dialog
+            data-dialog-target="dialog"
+            class="p-4
+                   dark:bg-zinc-950
+                   dark:text-zinc-50
+                   rounded
+                   shadow-xl">
+
+            <h2><%= t(:are_you_sure) %></h2>
+
+            <hr class="mb-4">
+
+            <%= link_to t(:delete),
+                list_path(id: list.id),
+                data: { 'turbo-method': :delete},
+                class: 'rounded-full
+                        border-2
+                        border-red-500
+                        px-1
+                        mt-1
+                        mr-8' %>
+
+            <button type="button" data-action="dialog#close" autofocus>Cancel</button>
+          </dialog>
+
+          <button
+            type="button"
+            data-action="dialog#open"
+            class="rounded-full
                   border-2
                   border-red-500
-                  px-1' if list.id == @list&.id %>
+                  px-1">
+            <%= t(:delete) %>
+        </span>
+      <% end %>
     </li>
   <% end %>
 </ul>
