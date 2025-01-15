@@ -30,6 +30,7 @@
 en:
   add_todo: "Add Todo"
   are_you_sure: "Are you sure?"
+  cancel: "Cancel"
   delete: "Delete"
   description: "Description"
   due: "Due"
