@@ -22,7 +22,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.expect(list: [:name])
   end
 
   def set_lists
