@@ -30,7 +30,7 @@ class TodosController < ApplicationController
   private
 
   def todo_params
-    params.require(:todo).permit(:description, :due, :done, :list_id, :send_to_calendar)
+    params.expect(todo: %i[description due done list_id send_to_calendar])
   end
 
   def list_redirect(list_id, alert = nil)
