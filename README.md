@@ -4,7 +4,7 @@
 
 The purpose of this application is to be a to-do application that runs in a home lab environment. The application can optionally connect to a home_calendar application https://github.com/JavaKoala/home_calendar
 
-|   |   |
+| New List | New To Do |
 | - | - |
 | <img width=50% height=50% alt="light new list" src="docs/assets/light_new_list.png"> | <img width=50% height=50% alt="light new todo" src="docs/assets/light_new_todo.png"> |
 | <img width=50% height=50% alt="dark new list" src="docs/assets/dark_new_list.png"> | <img width=50% height=50% alt="dark new todo" src="docs/assets/dark_new_todo.png"> |
