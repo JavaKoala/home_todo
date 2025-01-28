@@ -28,31 +28,35 @@
       <%= form_with model: @new_todo do |form| %>
         <div class="mt-1 mb-1">
           <%= form.label :description, t(:description) %>
-          <%= form.text_field :description, class: 'shadow
-                                                    appearance-none
-                                                    border
-                                                    rounded
-                                                    w-full
-                                                    py-2
-                                                    px-3
-                                                    leading-tight
-                                                    bg-inherit
-                                                    focus:outline-none
-                                                    focus:border-sky-500' %>
+          <%= form.text_field :description,
+                              required: true,
+                              class: 'shadow
+                                      appearance-none
+                                      border
+                                      rounded
+                                      w-full
+                                      py-2
+                                      px-3
+                                      leading-tight
+                                      bg-inherit
+                                      focus:outline-none
+                                      focus:border-sky-500' %>
         </div>
         <div class="mt-1 mb-1">
           <%= form.label :due, t(:due) %>
-          <%= form.datetime_local_field :due, class: 'shadow
-                                                      appearance-none
-                                                      border
-                                                      rounded
-                                                      w-full
-                                                      py-2
-                                                      px-3
-                                                      leading-tight
-                                                      bg-inherit
-                                                      focus:outline-none
-                                                      focus:border-sky-500' %>
+          <%= form.datetime_local_field :due,
+                                        required: true,
+                                        class: 'shadow
+                                                appearance-none
+                                                border
+                                                rounded
+                                                w-full
+                                                py-2
+                                                px-3
+                                                leading-tight
+                                                bg-inherit
+                                                focus:outline-none
+                                                focus:border-sky-500' %>
         </div>
         <div class="mt-1 mb-1">
           <% if Rails.configuration.home_calendar.enabled == true %>
