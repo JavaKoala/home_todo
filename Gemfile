@@ -39,7 +39,7 @@ gem 'bootsnap', require: false
 # Use Delayed Job for background processing
 gem 'daemons', '~> 1.4'
 gem 'delayed_job_active_record', '~> 4.1'
-gem 'rush_job', '~> 1.2'
+gem 'rush_job', '~> 1.3'
 
 # Use faraday for HTTP requests
 gem 'faraday', '~> 2.12'
