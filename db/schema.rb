@@ -10,37 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_02_135921) do
-  create_table "delayed_jobs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "priority", default: 0, null: false
-    t.integer "attempts", default: 0, null: false
-    t.text "handler", null: false
-    t.text "last_error"
-    t.datetime "run_at"
-    t.datetime "locked_at"
-    t.datetime "failed_at"
-    t.string "locked_by"
-    t.string "queue"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+ActiveRecord::Schema[8.0].define(version: 20_241_202_135_921) do # rubocop:disable Metrics/BlockLength
+  create_table 'delayed_jobs', charset: 'utf8mb4', collation: 'utf8mb4_0900_ai_ci', force: :cascade do |t|
+    t.integer 'priority', default: 0, null: false
+    t.integer 'attempts', default: 0, null: false
+    t.text 'handler', null: false
+    t.text 'last_error'
+    t.datetime 'run_at'
+    t.datetime 'locked_at'
+    t.datetime 'failed_at'
+    t.string 'locked_by'
+    t.string 'queue'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.index %w[priority run_at], name: 'delayed_jobs_priority'
   end
 
-  create_table "lists", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'lists', charset: 'utf8mb4', collation: 'utf8mb4_0900_ai_ci', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "todos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.text "description"
-    t.datetime "due"
-    t.bigint "list_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "done", default: false, null: false
-    t.index ["list_id"], name: "index_todos_on_list_id"
+  create_table 'todos', charset: 'utf8mb4', collation: 'utf8mb4_0900_ai_ci', force: :cascade do |t|
+    t.text 'description'
+    t.datetime 'due'
+    t.bigint 'list_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.boolean 'done', default: false, null: false
+    t.index ['list_id'], name: 'index_todos_on_list_id'
   end
 
-  add_foreign_key "todos", "lists"
+  add_foreign_key 'todos', 'lists'
 end
