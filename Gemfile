@@ -42,7 +42,7 @@ gem 'delayed_job_active_record', '~> 4.1'
 gem 'rush_job', '~> 1.2'
 
 # Use faraday for HTTP requests
-gem 'faraday', '~> 2.12'
+gem 'faraday', '~> 2.13'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
