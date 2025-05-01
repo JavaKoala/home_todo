@@ -61,7 +61,7 @@ group :development, :test do
 
   # Use RSpec for testing
   gem 'rails-controller-testing', '~> 1.0'
-  gem 'rspec-rails', '~> 7.1'
+  gem 'rspec-rails', '~> 8.0'
 end
 
 group :development do
