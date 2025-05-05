@@ -15,7 +15,7 @@ The purpose of this application is to be a to-do application that runs in a home
 
 https://dev.mysql.com/doc/refman/8.4/en/macos-installation.html
 
-### Install Ruby version 3.3.5
+### Install Ruby version 3.4.3
 
 I like rbenv ( https://github.com/rbenv/rbenv ), but rvm works too
 
